@@ -140,6 +140,7 @@
                     let newBubble3 = document.createElement("div");
                     newBubble3.classList.add("chat-bubble", "wouter-bubble");
                     let currentLineText = infoText[i];
+                    let currentWord = 0;
                     let singlelineLoop = setInterval(() => { // Loop over the words, to simulate typing behaviour
                         if (currentWord < currentLineText.length) {
                             currentWord += Math.floor(Math.random() * 10) + 5 // Return between 5 and 15 characters
