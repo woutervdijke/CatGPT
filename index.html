@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
@@ -146,6 +146,7 @@
                         } else {
                             newBubble3.innerHTML = currentLineText; // When finished, put the entire response in the bubble, without block character
                             clearInterval(singlelineLoop); 
+                            form.scrollIntoView();
                             userInput.focus(); // Focus the input again, so user can type a new response
                             createLine(i + 1)  // Call this function again using i+1 so the next line is created
                         }
