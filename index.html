@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    
+    <style>
+       
+    </style>
+    <title>CatGPT</title>
+    <meta name="description" content="What if ChatGPT was a cat?">
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="header">
+            <h1>CatGPT</h1>
+            <p>What if ChatGPT was a cat?</p>
+        </div>
+        <div id="chatcontainer">
+
+            <div id="chat">
+                <div class="chat-bubble-container chat-gpt-bubble-container">
+                    <div class="profile-picture"><img src="avatar.png" height="100%" /></div>
+                    <div class="chat-bubble chat-gpt-bubble">
+                        Meow, meow meow meow, meow meow?
+                    </div>
+                </div>
+
+            </div>
+            <div id="input-area">
+                <div id="input-container">
+                    <form id="form">
+                        <input type="text" placeholder="Type your message here" id="user-input" />
+                    </form>
+                    <a><i class="fas fa-paper-plane"></i></a>
+
+                </div>
+                <p class="disclaimer">This site does not actually use ChatGPT or any other form of AI. It just returns a
+                    random number of meows. | Created by <a href="https://www.twitter.com/woutervd" target="_blank">Wouter van Dijke</a> (with some help from ChatGPT)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Javascript code
+        const userInput = document.getElementById("user-input");
+        const chatArea = document.getElementById("chat");
+        const sendBtn = document.querySelector(".fa-paper-plane");
+        const form = document.getElementById('form');
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            if (userInput.value !== "") {
+                let newBubbleContainer = document.createElement("div")
+                newBubbleContainer.classList.add("chat-bubble-container", "user-bubble-container")
+                newBubbleContainer.innerHTML = '<div class="profile-picture"><img src="user.png" height="100%" /></div>'
+                let newBubble = document.createElement("div");
+                newBubble.classList.add("chat-bubble", "user-bubble");
+                newBubble.innerHTML = userInput.value;
+                newBubbleContainer.appendChild(newBubble);
+                chatArea.appendChild(newBubbleContainer);
+                userInput.value = "";
+
+                var numberOfMeows = Math.floor(Math.random() * 15);
+                var meows = "Meow ";
+                for (var i = 0; i < numberOfMeows; i++) {
+
+                    if (numberOfMeows < 4 && i == numberOfMeows - 1) {
+                        meows += "meow!";
+                    } else if (i == numberOfMeows - 1) {
+                        meows += "meow.";
+                    } else {
+                        meows += "meow ";
+                    }
+                }
+
+                let newBubble2Container = document.createElement("div")
+                newBubble2Container.classList.add("chat-bubble-container", "chat-gpt-bubble-container")
+                newBubble2Container.innerHTML = '<div class="profile-picture"><img src="avatar.png" height="100%" /></div>'
+                let newBubble2 = document.createElement("div");
+                newBubble2.classList.add("chat-bubble", "chat-gpt-bubble");
+                newBubble2.innerHTML = "....";
+                newBubble2Container.appendChild(newBubble2)
+                chatArea.appendChild(newBubble2Container);
+
+                let currentMeow = 0
+                let meowLoop = setInterval(() => {
+                    if (currentMeow < meows.length) {
+                        currentMeow += 5
+                        newBubble2.innerHTML = meows.slice(0, currentMeow) + "█";
+                        // let delaytime = 
+                        setTimeout(function () {
+                        }, Math.floor(Math.random()*1000)+250);
+
+                    } else {
+                        newBubble2.innerHTML = meows;
+                        clearInterval(meowLoop)
+                        userInput.focus()
+                    }
+                }, 100)
+                
+            }
+        }
+        sendBtn.addEventListener("click", handleSubmit);
+        form.addEventListener("submit", handleSubmit)
+
+    </script>
+</body>
+
+</html>
