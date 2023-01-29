@@ -5,11 +5,13 @@ body {
   background-color: #343541;
 }
 
-@media only screen and (max-width: 600px) {
-  #container, #chatcontainer {
+@supports (-webkit-touch-callout: none) {
+
+  #chatcontainer,
+  #container {
     height: -webkit-fill-available !important;
   }
-  
+
 }
 
 #container {
@@ -69,7 +71,7 @@ body {
 }
 
 #chat a {
-  color:#818f7b;
+  color: #818f7b;
 }
 
 .chat-bubble-container {
