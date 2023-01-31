@@ -25,7 +25,8 @@ I also let ChatGPT generate the first version of the JavaScript code, but needed
 
 In summary, the ChatGPT use case I see is to get a quick basic structure as a starting point for building a site.  But AI is not good at getting the site to do creative things.
 
-Some credits: the airplane icon is from FontAwesome, the user avatar is from Iconsax. The site lives on Netlify, I use Counter.dev to get some statistics.
+### Some credits
+The airplane icon is from FontAwesome, the user avatar is from Iconsax. The site lives on Netlify, I use Counter.dev to get some statistics.
 
 The cat in the image is called Suus.
 
