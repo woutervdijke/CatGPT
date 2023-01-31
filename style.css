@@ -135,6 +135,7 @@ body {
 #input-area {
   width: 100%;
   padding-top: 20px;
+  padding-bottom: 5px;
   background-color: #343541;
   display: flex;
   flex-direction: column;
@@ -145,6 +146,7 @@ body {
   align-items: center;
   display: flex;
   justify-content: center;
+  margin-bottom: 0.5em;
 }
 
 #form {
@@ -174,8 +176,10 @@ body {
   color: #757575;
   font-style: italic;
   padding: 0px 0.5em;
+  margin: 0.3em;
 }
 
 .disclaimer a {
-  color: #818f7b
+  color: #818f7b;
+
 }
