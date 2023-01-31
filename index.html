@@ -8,16 +8,16 @@
     <link href="style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
     
-    <title>CatGPT</title>
-    <meta name="description" content="What if ChatGPT were a cat?">
+    <title>DogGPT</title>
+    <meta name="description" content="What if ChatGPT were a dog?">
 </head>
 
 <body>
 
     <div id="container">
         <div class="header">
-            <h1>CatGPT</h1>
-            <p>What if ChatGPT were a cat?</p>
+            <h1>DogGPT</h1>
+            <p>What if ChatGPT were a dog?</p>
         </div>
         <div id="chatcontainer">
 
@@ -25,7 +25,7 @@
                 <div class="chat-bubble-container chat-gpt-bubble-container">
                     <div class="profile-picture"><img src="avatar.png" height="100%" /></div>
                     <div class="chat-bubble chat-gpt-bubble">
-                        Meow, meow meow meow, meow meow?
+                        Woof, woof woof woof, woof woof?
                     </div>
                 </div>
 
@@ -67,25 +67,25 @@
                 chatArea.appendChild(newBubbleContainer);
                 userInput.value = ""; // Clear the input vield
 
-                // Generate the CatGPT response
-                var numberOfMeows = Math.floor(Math.random() * 15); // Random number of meows between 0 and 14.
-                var meows = "Meow"; // Always start with 1 capitalized meow
+                // Generate the DogGPT response
+                var numberOfMeows = Math.floor(Math.random() * 15); // Random number of woofs between 0 and 14.
+                var woofs = "Woof"; // Always start with 1 capitalized woof
                 if (numberOfMeows == 0) {
-                    meows += "." // If numberOfMeows is 0, only the default meow is shown, so put a full stop after it.
+                    woofs += "." // If numberOfMeows is 0, only the default woof is shown, so put a full stop after it.
                 } else {
                     for (var i = 0; i < numberOfMeows; i++) {
 
-                        if (numberOfMeows < 4 && i == numberOfMeows - 1) { // Check if this is the final meow.
-                            meows += " meow!"; // Three meows or fewer gets an exclamation point.
+                        if (numberOfMeows < 4 && i == numberOfMeows - 1) { // Check if this is the final woof.
+                            woofs += " woof!"; // Three woofs or fewer gets an exclamation point.
                         } else if (i == numberOfMeows - 1) {
-                            meows += " meow."; // Longer replies get a full stop.
+                            woofs += " woof."; // Longer replies get a full stop.
                         } else {
-                            meows += " meow"; // If it is not the last meow, just return a meow.
+                            woofs += " woof"; // If it is not the last woof, just return a woof.
                         }
                     }
                 }
 
-                // Show the CatGPT response in a new chat-gpt-bubble, wrapped in a chat-bubble-container
+                // Show the DogGPT response in a new chat-gpt-bubble, wrapped in a chat-bubble-container
                 let newBubble2Container = document.createElement("div")
                 newBubble2Container.classList.add("chat-bubble-container", "chat-gpt-bubble-container")
                 newBubble2Container.innerHTML = '<div class="profile-picture"><img src="avatar.png" height="100%" /></div>'
@@ -98,11 +98,11 @@
                 let currentMeow = 0
 
                 let meowLoop = setInterval(() => { // Interval to show more of the reply every 100 milliseconds (simulating typing behaviour)
-                    if (currentMeow < meows.length) {
+                    if (currentMeow < woofs.length) {
                         currentMeow += Math.floor(Math.random() * 10) // Show between 0 and 10 more characters
-                        newBubble2.innerHTML = meows.slice(0, currentMeow) + "█"; // While typing, end the string with a block character
+                        newBubble2.innerHTML = woofs.slice(0, currentMeow) + "█"; // While typing, end the string with a block character
                     } else {
-                        newBubble2.innerHTML = meows; // When finished, put the entire response in the bubble, without block character
+                        newBubble2.innerHTML = woofs; // When finished, put the entire response in the bubble, without block character
                         clearInterval(meowLoop);
                         userInput.focus(); // Focus the input again, so user can type a new response
                     }
@@ -114,13 +114,13 @@
         form.addEventListener("submit", handleSubmit); // Handle default submit (e.g. pressing enter)
 
         const infoText = [
-            "Hi! I'm Wouter. I made this site for fun, and to try out programming with ChatGPT.",
-            "To be clear: this site does not actually use ChatGPT or any other form of AI. It just returns a random number of meows. Nothing is done with your input either.",
+            "Hi! I forked this from Wouter's CatGPT. ",
+            "To be clear: this site does not actually use ChatGPT or any other form of AI. It just returns a random number of woofs. Nothing is done with your input either.",
             "I did use ChatGPT to help build it. I found it was a very easy way to create a basic website structure. ChatGPT also generated the JavaScript for this site.",
             "However, once the page was more complicated, any changes would break the page. Sometimes, ChatGPT introduced elements I never asked for.",
             "So in summary, it's great as a starting point, or to save you some time, but won't replace humans quite yet.",
             "Some credits: the airplane icon is from FontAwesome, the user avatar is from Iconsax. The cat is my own cat, Suus.",
-            'If you want to know more, <a href="https://github.com/woutervdijke/catgpt" target="_blank">check out the code on Github</a>, or send me a message <a href="https://twitter.com/woutervd" target="_blank">on Twitter</a>!'
+            'If you want to know more, <a href="https://github.com/woutervdijke/catgpt" target="_blank">check out the code on Github</a>!'
         ] // Lines of the information chat
 
 
@@ -130,7 +130,7 @@
             // Create a chat-bubble-container
             let newBubble3Container = document.createElement("div")
             newBubble3Container.classList.add("chat-bubble-container", "wouter-bubble-container")
-            newBubble3Container.innerHTML = '<div class="profile-picture"><img src="wouter.jpeg" height="100%" /></div>'
+            newBubble3Container.innerHTML = '<div class="profile-picture"><img src="user.png" height="100%" /></div>'
      
             function createLine(i) { // Create each line seperately, one at a time
                 if (i < infoText.length) { // Check if the line exists
