@@ -3,6 +3,12 @@
 
 ChatGPT is boring. I want a cat to answer my questions. So I built CatGPT!
 
+## Demo
+Try CatGPT at [catgpt.wvd.io](https://catgpt.wvd.io)
+
+<img src="https://user-images.githubusercontent.com/15675775/215778138-072b609a-e282-46a4-b345-3f524a85765f.jpg" width="500" height="auto" />
+
+## How?
 The latest in pawtifurcial intelligence, CatGPT uses a purr-al network and an advanced hairballgorithm to come up with natural-sounding responses.
 
 Not really though, it just returns random meows. 
@@ -23,6 +29,3 @@ Some credits: the airplane icon is from FontAwesome, the user avatar is from Ico
 
 The cat in the image is called Suus.
 
-## Demo
-Try CatGPT at [catgpt.wvd.io](https://catgpt.wvd.io)
-![FnpAq3SX0AAQjWy](https://user-images.githubusercontent.com/15675775/215778138-072b609a-e282-46a4-b345-3f524a85765f.jpg)
