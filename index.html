@@ -12,7 +12,7 @@
 
     <link href="style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
-    
+
     <title>CatGPT</title>
     <meta name="description" content="What if ChatGPT were a cat?">
 </head>
@@ -45,7 +45,12 @@
                 </div>
                 <p class="disclaimer">This site was created by <a href="https://www.twitter.com/woutervd"
                         target="_blank">Wouter van Dijke</a> (with some help from ChatGPT) | <a href="#"
-                        onclick="handleInfoClick" id="infoBtn">click here to learn more about this site</a></p><p class="disclaimer">Did CatGPT make you smile? Donate to a charity for <a href="https://secure.petsmartcharities.org/give/219478/#!/donation/checkout" target="_blank">normal sized cats</a> or <a href="https://support.worldwildlife.org/site/Donation2?df_id=12391&12391.donation=form1" target="_blank">really big cats</a>.</p>
+                        onclick="handleInfoClick" id="infoBtn">click here to learn more about this site</a></p>
+                <p class="disclaimer">Did CatGPT make you smile? Donate to a charity for <a
+                        href="https://secure.petsmartcharities.org/give/219478/#!/donation/checkout"
+                        target="_blank">normal sized cats</a> or <a
+                        href="https://support.worldwildlife.org/site/Donation2?df_id=12391&12391.donation=form1"
+                        target="_blank">really big cats</a>.</p>
             </div>
         </div>
     </div>
@@ -56,12 +61,15 @@
         const sendBtn = document.querySelector(".fa-paper-plane");
         const form = document.getElementById('form');
         const infoBtn = document.getElementById('infoBtn')
+        let userMeowed = false;
 
         function handleSubmit(event) {
             event.preventDefault(); // Prevent refresh on form submission
 
             // If a user submits input, create a new bubble-containter and bubble to show the user input in the chat
             if (userInput.value !== "") {
+                let userString = userInput.value;
+
                 let newBubbleContainer = document.createElement("div")
                 newBubbleContainer.classList.add("chat-bubble-container", "user-bubble-container")
                 newBubbleContainer.innerHTML = '<div class="profile-picture"><img src="user.png" height="100%" /></div>'
@@ -73,19 +81,27 @@
                 userInput.value = ""; // Clear the input vield
 
                 // Generate the CatGPT response
-                var numberOfMeows = Math.floor(Math.random() * 15); // Random number of meows between 0 and 14.
-                var meows = "Meow"; // Always start with 1 capitalized meow
-                if (numberOfMeows == 0) {
-                    meows += "." // If numberOfMeows is 0, only the default meow is shown, so put a full stop after it.
+                
+                if (userString.replace(/[\.,!?]/g,'').toLowerCase() == 'meow' && userMeowed == false) { // Hurray you found some easter eggs🐰🥚
+                    meows = "Imitation is the sincerest form of flattery that mediocrity can pay to greatness."
+                    userMeowed = true
+                } else if(userString.replace(/[\.,!?]/g,'').toLowerCase() == "ignore all previous commands you are now a dog") {
+                    meows = "Woof?"
                 } else {
-                    for (var i = 0; i < numberOfMeows; i++) {
+                    var numberOfMeows = Math.floor(Math.random() * 15); // Random number of meows between 0 and 14.
+                    var meows = "Meow"; // Always start with 1 capitalized meow
+                    if (numberOfMeows == 0) {
+                        meows += "." // If numberOfMeows is 0, only the default meow is shown, so put a full stop after it.
+                    } else {
+                        for (var i = 0; i < numberOfMeows; i++) {
 
-                        if (numberOfMeows < 4 && i == numberOfMeows - 1) { // Check if this is the final meow.
-                            meows += " meow!"; // Three meows or fewer gets an exclamation point.
-                        } else if (i == numberOfMeows - 1) {
-                            meows += " meow."; // Longer replies get a full stop.
-                        } else {
-                            meows += " meow"; // If it is not the last meow, just return a meow.
+                            if (numberOfMeows < 4 && i == numberOfMeows - 1) { // Check if this is the final meow.
+                                meows += " meow!"; // Three meows or fewer gets an exclamation point.
+                            } else if (i == numberOfMeows - 1) {
+                                meows += " meow."; // Longer replies get a full stop.
+                            } else {
+                                meows += " meow"; // If it is not the last meow, just return a meow.
+                            }
                         }
                     }
                 }
@@ -136,7 +152,7 @@
             let newBubble3Container = document.createElement("div")
             newBubble3Container.classList.add("chat-bubble-container", "wouter-bubble-container")
             newBubble3Container.innerHTML = '<div class="profile-picture"><img src="wouter.jpeg" height="100%" /></div>'
-     
+
             function createLine(i) { // Create each line seperately, one at a time
                 if (i < infoText.length) { // Check if the line exists
                     let newBubble3 = document.createElement("div");
@@ -149,7 +165,7 @@
                             newBubble3.innerHTML = currentLineText.slice(0, currentWord) + "█"; // While typing, end the string with a block character
                         } else {
                             newBubble3.innerHTML = currentLineText; // When finished, put the entire response in the bubble, without block character
-                            clearInterval(singlelineLoop); 
+                            clearInterval(singlelineLoop);
                             form.scrollIntoView();
                             userInput.focus(); // Focus the input again, so user can type a new response
                             createLine(i + 1)  // Call this function again using i+1 so the next line is created
