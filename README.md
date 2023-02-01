@@ -3,6 +3,10 @@
 
 ChatGPT is boring. I want a cat to answer my questions. So I built CatGPT!
 
+#### *As seen on:*
+
+**[The Verge](https://www.theverge.com/2023/2/1/23580953/forget-about-chatgpt-meow-theres-catgpt) | [franceinfo](https://www.francetvinfo.fr/live/message/63d/8d9/e6a/37a/44f/9f5/2b1/3ed.html)**
+
 ## Demo
 Try CatGPT at [catgpt.wvd.io](https://catgpt.wvd.io)
 
