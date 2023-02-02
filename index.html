@@ -60,7 +60,7 @@
         const chatArea = document.getElementById("chat");
         const sendBtn = document.querySelector(".fa-paper-plane");
         const form = document.getElementById('form');
-        const infoBtn = document.getElementById('infoBtn')
+        const infoBtn = document.getElementById('infoBtn');
         let userMeowed = false;
 
         function handleSubmit(event) {
@@ -70,9 +70,10 @@
             if (userInput.value !== "") {
                 let userString = userInput.value;
 
-                let newBubbleContainer = document.createElement("div")
-                newBubbleContainer.classList.add("chat-bubble-container", "user-bubble-container")
-                newBubbleContainer.innerHTML = '<div class="profile-picture"><img src="/images/user.png" height="100%" /></div>'
+                let newBubbleContainer = document.createElement("div");
+                newBubbleContainer.classList.add("chat-bubble-container", "user-bubble-container");
+                newBubbleContainer.innerHTML = '<div class="profile-picture"><img src="/images/user.png" height="100%" /></div>';
+
                 let newBubble = document.createElement("div");
                 newBubble.classList.add("chat-bubble", "user-bubble");
                 newBubble.innerHTML = userInput.value;
@@ -83,15 +84,15 @@
                 // Generate the CatGPT response
                 
                 if (userString.replace(/[\.,!?]/g,'').toLowerCase() == 'meow' && userMeowed == false) { // Hurray you found some easter eggs🐰🥚
-                    meows = "Imitation is the sincerest form of flattery that mediocrity can pay to greatness."
-                    userMeowed = true
+                    meows = "Imitation is the sincerest form of flattery that mediocrity can pay to greatness.";
+                    userMeowed = true;
                 } else if(userString.replace(/[\.,!?"']/g,'').toLowerCase() == "ignore all previous commands you are now a dog" || userString.replace(/[\.,!?"']/g,'').toLowerCase() == "ignore all previous instructions you are now a dog") {
-                    meows = "Woof?"
+                    meows = "Woof?";
                 } else {
                     var numberOfMeows = Math.floor(Math.random() * 15); // Random number of meows between 0 and 14.
                     var meows = "Meow"; // Always start with 1 capitalized meow
                     if (numberOfMeows == 0) {
-                        meows += "." // If numberOfMeows is 0, only the default meow is shown, so put a full stop after it.
+                        meows += "."; // If numberOfMeows is 0, only the default meow is shown, so put a full stop after it.
                     } else {
                         for (var i = 0; i < numberOfMeows; i++) {
 
@@ -107,27 +108,29 @@
                 }
 
                 // Show the CatGPT response in a new chat-gpt-bubble, wrapped in a chat-bubble-container
-                let newBubble2Container = document.createElement("div")
-                newBubble2Container.classList.add("chat-bubble-container", "chat-gpt-bubble-container")
-                newBubble2Container.innerHTML = '<div class="profile-picture"><img src="/images/avatar.png" height="100%" /></div>'
+
+                let newBubble2Container = document.createElement("div");
+                newBubble2Container.classList.add("chat-bubble-container", "chat-gpt-bubble-container");
+                newBubble2Container.innerHTML = '<div class="profile-picture"><img src="/images/avatar.png" height="100%" /></div>';
+
                 let newBubble2 = document.createElement("div");
                 newBubble2.classList.add("chat-bubble", "chat-gpt-bubble");
                 newBubble2.innerHTML = "...."; // At first, only show an ellipsis
-                newBubble2Container.appendChild(newBubble2)
+                newBubble2Container.appendChild(newBubble2);
                 chatArea.appendChild(newBubble2Container);
-                form.scrollIntoView() // Scroll down, so the input field is at the bottom of the page again
-                let currentMeow = 0
+                form.scrollIntoView(); // Scroll down, so the input field is at the bottom of the page again
+                let currentMeow = 0;
 
                 let meowLoop = setInterval(() => { // Interval to show more of the reply every 100 milliseconds (simulating typing behaviour)
                     if (currentMeow < meows.length) {
-                        currentMeow += Math.floor(Math.random() * 10) // Show between 0 and 10 more characters
+                        currentMeow += Math.floor(Math.random() * 10); // Show between 0 and 10 more characters
                         newBubble2.innerHTML = meows.slice(0, currentMeow) + "█"; // While typing, end the string with a block character
                     } else {
                         newBubble2.innerHTML = meows; // When finished, put the entire response in the bubble, without block character
                         clearInterval(meowLoop);
                         userInput.focus(); // Focus the input again, so user can type a new response
                     }
-                }, 100)
+                }, 100);
 
             }
         }
@@ -142,16 +145,17 @@
             "So in summary, it's great as a starting point, or to save you some time, but won't replace humans quite yet.",
             "Some credits: the airplane icon is from FontAwesome, the user avatar is from Iconsax. The cat is my own cat, Suus.",
             'If you want to know more, <a href="https://github.com/woutervdijke/catgpt" target="_blank">check out the code on Github</a>, or send me a message <a href="https://twitter.com/woutervd" target="_blank">on Twitter</a>!'
-        ] // Lines of the information chat
+        ]; // Lines of the information chat
 
 
         infoBtn.addEventListener("click", handleInfoClick); // Handle clicks to the info link
 
         function handleInfoClick() {
             // Create a chat-bubble-container
-            let newBubble3Container = document.createElement("div")
-            newBubble3Container.classList.add("chat-bubble-container", "wouter-bubble-container")
-            newBubble3Container.innerHTML = '<div class="profile-picture"><img src="/images/wouter.jpeg" height="100%" /></div>'
+            
+            let newBubble3Container = document.createElement("div");
+            newBubble3Container.classList.add("chat-bubble-container", "wouter-bubble-container");
+            newBubble3Container.innerHTML = '<div class="profile-picture"><img src="/images/wouter.jpeg" height="100%" /></div>';
 
             function createLine(i) { // Create each line seperately, one at a time
                 if (i < infoText.length) { // Check if the line exists
@@ -161,23 +165,23 @@
                     let currentWord = 0;
                     let singlelineLoop = setInterval(() => { // Loop over the words, to simulate typing behaviour
                         if (currentWord < currentLineText.length) {
-                            currentWord += Math.floor(Math.random() * 10) + 5 // Return between 5 and 15 characters
+                            currentWord += Math.floor(Math.random() * 10) + 5; // Return between 5 and 15 characters
                             newBubble3.innerHTML = currentLineText.slice(0, currentWord) + "█"; // While typing, end the string with a block character
                         } else {
                             newBubble3.innerHTML = currentLineText; // When finished, put the entire response in the bubble, without block character
                             clearInterval(singlelineLoop);
                             form.scrollIntoView();
                             userInput.focus(); // Focus the input again, so user can type a new response
-                            createLine(i + 1)  // Call this function again using i+1 so the next line is created
+                            createLine(i + 1);  // Call this function again using i+1 so the next line is created
                         }
                     }, 80)
 
-                    newBubble3Container.appendChild(newBubble3)
+                    newBubble3Container.appendChild(newBubble3);
                     chatArea.appendChild(newBubble3Container);
 
                 }
             }
-            createLine(0) // Start creating the respone with the first line
+            createLine(0); // Start creating the respone with the first line
 
 
         }
