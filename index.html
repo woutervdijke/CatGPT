@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
     <link href="style.css" rel="stylesheet" />
@@ -28,7 +28,7 @@
 
             <div id="chat">
                 <div class="chat-bubble-container chat-gpt-bubble-container">
-                    <div class="profile-picture"><img src="./images/avatar.png" height="100%" /></div>
+                    <div class="profile-picture"><img src="/images/avatar.png" height="100%" /></div>
                     <div class="chat-bubble chat-gpt-bubble">
                         Meow, meow meow meow, meow meow?
                     </div>
@@ -72,7 +72,7 @@
 
                 let newBubbleContainer = document.createElement("div")
                 newBubbleContainer.classList.add("chat-bubble-container", "user-bubble-container")
-                newBubbleContainer.innerHTML = '<div class="profile-picture"><img src="./images/user.png" height="100%" /></div>'
+                newBubbleContainer.innerHTML = '<div class="profile-picture"><img src="/images/user.png" height="100%" /></div>'
                 let newBubble = document.createElement("div");
                 newBubble.classList.add("chat-bubble", "user-bubble");
                 newBubble.innerHTML = userInput.value;
@@ -109,7 +109,7 @@
                 // Show the CatGPT response in a new chat-gpt-bubble, wrapped in a chat-bubble-container
                 let newBubble2Container = document.createElement("div")
                 newBubble2Container.classList.add("chat-bubble-container", "chat-gpt-bubble-container")
-                newBubble2Container.innerHTML = '<div class="profile-picture"><img src="./images/avatar.png" height="100%" /></div>'
+                newBubble2Container.innerHTML = '<div class="profile-picture"><img src="/images/avatar.png" height="100%" /></div>'
                 let newBubble2 = document.createElement("div");
                 newBubble2.classList.add("chat-bubble", "chat-gpt-bubble");
                 newBubble2.innerHTML = "...."; // At first, only show an ellipsis
@@ -151,7 +151,7 @@
             // Create a chat-bubble-container
             let newBubble3Container = document.createElement("div")
             newBubble3Container.classList.add("chat-bubble-container", "wouter-bubble-container")
-            newBubble3Container.innerHTML = '<div class="profile-picture"><img src="./images/wouter.jpeg" height="100%" /></div>'
+            newBubble3Container.innerHTML = '<div class="profile-picture"><img src="/images/wouter.jpeg" height="100%" /></div>'
 
             function createLine(i) { // Create each line seperately, one at a time
                 if (i < infoText.length) { // Check if the line exists
