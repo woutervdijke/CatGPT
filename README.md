@@ -1,7 +1,7 @@
 # DogGPT
 *What if ChatGPT were a dog?
 
-ChatGPT is boring. I want a cat to answer my questions. So I built DogGPT!
+ChatGPT is boring. I want a dog to answer my questions. So I built DogGPT!
 
 ## Demo
 Try DogGpt [thedoggybrad.github.io/dogpt/](https://thedoggybrad.github.io/dogpt/)
