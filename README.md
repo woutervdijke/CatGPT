@@ -11,3 +11,6 @@ The "DogGPT' is a fork of the popular "CatGPT".
 
 ## Why?
 I made this site for fun, by forking "CatGPT". I was just thinking on what will happen if I change all references to a dog. And, this is the result.
+<br>
+<br>
+Note: No Artificial Intelligence (AI) was really used. It just uses some sorts of randomizers running under JavaScript.
