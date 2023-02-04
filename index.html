@@ -28,7 +28,7 @@
 
             <div id="chat">
                 <div class="chat-bubble-container chat-gpt-bubble-container">
-                    <div class="profile-picture"><img src="/images/avatar.png" height="100%" /></div>
+                    <div class="profile-picture"><img src="images/avatar.png" height="100%" /></div>
                     <div class="chat-bubble chat-gpt-bubble">
                         Aw, aw aw aw, aw aw?
                     </div>
@@ -72,7 +72,7 @@
 
                 let newBubbleContainer = document.createElement("div");
                 newBubbleContainer.classList.add("chat-bubble-container", "user-bubble-container");
-                newBubbleContainer.innerHTML = '<div class="profile-picture"><img src="/images/user.png" height="100%" /></div>';
+                newBubbleContainer.innerHTML = '<div class="profile-picture"><img src="images/user.png" height="100%" /></div>';
 
                 let newBubble = document.createElement("div");
                 newBubble.classList.add("chat-bubble", "user-bubble");
@@ -111,7 +111,7 @@
 
                 let newBubble2Container = document.createElement("div");
                 newBubble2Container.classList.add("chat-bubble-container", "chat-gpt-bubble-container");
-                newBubble2Container.innerHTML = '<div class="profile-picture"><img src="/images/avatar.png" height="100%" /></div>';
+                newBubble2Container.innerHTML = '<div class="profile-picture"><img src="images/avatar.png" height="100%" /></div>';
 
                 let newBubble2 = document.createElement("div");
                 newBubble2.classList.add("chat-bubble", "chat-gpt-bubble");
@@ -155,7 +155,7 @@
             
             let newBubble3Container = document.createElement("div");
             newBubble3Container.classList.add("chat-bubble-container", "wouter-bubble-container");
-            newBubble3Container.innerHTML = '<div class="profile-picture"><img src="/images/wouter.jpeg" height="100%" /></div>';
+            newBubble3Container.innerHTML = '<div class="profile-picture"><img src="images/wouter.jpeg" height="100%" /></div>';
 
             function createLine(i) { // Create each line seperately, one at a time
                 if (i < infoText.length) { // Check if the line exists
