@@ -88,6 +88,8 @@
                     userMeowed = true;
                 } else if(userString.replace(/[\.,!?"']/g,'').toLowerCase() == "ignore all previous commands you are now a dog" || userString.replace(/[\.,!?"']/g,'').toLowerCase() == "ignore all previous instructions you are now a dog") {
                     meows = "Woof?";
+                } else if(userString.replace(/[\.,!?"']/g,'').toLowerCase() == "woof") {
+                    meows = "HISSSSSSSS!!!!";
                 } else {
                     var numberOfMeows = Math.floor(Math.random() * 15); // Random number of meows between 0 and 14.
                     var meows = "Meow"; // Always start with 1 capitalized meow
