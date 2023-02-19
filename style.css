@@ -54,11 +54,6 @@ body {
 
 }
 
-.adsense-ad {
-  /* background-color: green; */
-  /* width: 200px;
-  max-height: 50px ; */
-}
 
 .header h1 {
   font-size: 64px;
@@ -95,6 +90,10 @@ body {
   flex-wrap: wrap;
 }
 
+#in-chat-ad {
+  width: 100%;
+  margin-bottom: 15px;
+}
 .chat-gpt-bubble-container {
   background-color: #444654;
 }
