@@ -93,6 +93,7 @@ body {
 #in-chat-ad {
   width: 100%;
   margin-bottom: 15px;
+  margin: auto;
 }
 .chat-gpt-bubble-container {
   background-color: #444654;
