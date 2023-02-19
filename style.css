@@ -93,6 +93,7 @@ body {
 #in-chat-ad {
   width: 100%;
   margin-bottom: 15px;
+  display: contents;
 }
 .chat-gpt-bubble-container {
   background-color: #444654;
@@ -163,7 +164,7 @@ body {
 }
 
 #form {
-  width: 60%;
+  width: 100%;
 }
 
 #input-area input {
