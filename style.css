@@ -39,13 +39,25 @@ body {
   padding: 20px;
   width: 100%;
   display: flex;
+  
+  background-color: #343541;
+  color: white;
+  justify-content: space-evenly;
+
+}
+
+.header-text {
+  display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: #343541;
-  color: white;
-  justify-content: center;
 
+}
+
+.adsense-ad {
+  /* background-color: green; */
+  /* width: 200px;
+  max-height: 50px ; */
 }
 
 .header h1 {
