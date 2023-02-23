@@ -5,6 +5,8 @@ body {
   background-color: #343541;
 }
 
+* { box-sizing: border-box; }
+
 @supports (-webkit-touch-callout: none) {
 
   #chatcontainer,
