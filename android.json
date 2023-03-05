@@ -4,8 +4,74 @@
     "uninstalled": []
   },
   "config_munge": {
-    "files": {}
+    "files": {
+      "AndroidManifest.xml": {
+        "parents": {
+          "/manifest/application/activity": [
+            {
+              "xml": "<activity android:theme=\"@style/CustomTheme\" />",
+              "count": 1,
+              "mode": "merge",
+              "id": "config.xml",
+              "oldAttrib": {
+                "android:configChanges": "orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode",
+                "android:exported": "true",
+                "android:label": "@string/activity_name",
+                "android:launchMode": "singleTop",
+                "android:name": "MainActivity",
+                "android:screenOrientation": "portrait",
+                "android:theme": "@style/CustomTheme",
+                "android:windowSoftInputMode": "adjustResize"
+              }
+            }
+          ]
+        }
+      },
+      "strings.xml": {
+        "parents": {
+          "/resources": [
+            {
+              "xml": "<style name=\"CustomTheme\" parent=\"@style/Theme.AppCompat.NoActionBar\"><item name=\"android:windowLayoutInDisplayCutoutMode\">shortEdges</item></style>",
+              "count": 1,
+              "mode": "add",
+              "id": "config.xml"
+            }
+          ]
+        }
+      },
+      "res/xml/config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
   },
-  "installed_plugins": {},
-  "dependent_plugins": {}
+  "installed_plugins": {
+    "cordova-plugin-proguard": {
+      "PACKAGE_NAME": "io.wvd.catgpt"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "io.wvd.catgpt"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-splashscreen.SplashScreen",
+      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+      "pluginId": "cordova-plugin-splashscreen",
+      "clobbers": [
+        "navigator.splashscreen"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-proguard": "2.2.0",
+    "cordova-plugin-splashscreen": "6.0.2"
+  }
 }
