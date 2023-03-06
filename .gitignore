@@ -19,3 +19,5 @@ out
 gradle-app.setting
 # Android Studio
 .idea
+# Google Service
+/app/google-services.json
