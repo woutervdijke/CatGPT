@@ -5,6 +5,12 @@ body {
   background-color: #343541;
   /* remove tap highlight */
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -38,7 +44,7 @@ body {
   display: flex;
   flex-direction: column-reverse;
   overflow-y: scroll;
-  padding-bottom: 140px;
+  padding-bottom: 120px;
 }
 
 #chatcontainer::-webkit-scrollbar {

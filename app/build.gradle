@@ -263,6 +263,8 @@ android {
         }
         buildTypes {
             release {
+                minifyEnabled true
+                shrinkResources true
                 signingConfig signingConfigs.release
             }
         }
@@ -295,6 +297,7 @@ dependencies {
 
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
+    implementation "com.google.android.gms:play-services-ads:20.6.0"
     // SUB-PROJECT DEPENDENCIES END
 }
 

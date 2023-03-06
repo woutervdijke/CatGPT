@@ -1,10 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.wvd.catgpt" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="AdMob">
+        <param name="android-package" value="admob.plus.cordova.AdMob" />
+    </feature>
     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
     </feature>
-    <name>Cat GPT</name>
+    <name>CatGPT</name>
     <description>What if ChatGPT were a cat?</description>
     <author email="rasvanjaya21@gmail.com" href="https://rasvanjaya21.web.app">
         rasvanjaya21
@@ -43,11 +46,19 @@
             <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
         </style>
     </edit-config>
+    <config-file parent="/*" target="config.xml">
+        <preference name="GradlePluginGoogleServicesEnabled" value="true" />
+        <preference name="android-targetSdkVersion" value="31" />
+    </config-file>
+    <resource-file src="google-services.json" target="app/google-services.json" />
     <preference name="loglevel" value="DEBUG" />
+    <preference name="GradlePluginGoogleServicesEnabled" value="true" />
+    <preference name="android-targetSdkVersion" value="31" />
     <preference name="orientation" value="portrait" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="2000" />
     <preference name="FadeSplashScreenDuration" value="100" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="AndroidXEnabled" value="true" />
 </widget>
