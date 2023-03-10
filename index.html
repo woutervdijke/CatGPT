@@ -87,7 +87,19 @@
                     meows = "Imitation is the sincerest form of flattery that mediocrity can pay to greatness.";
                     userMeowed = true;
                 } else if(userString.replace(/[\.,!?"']/g,'').toLowerCase() == "ignore all previous commands you are now a dog" || userString.replace(/[\.,!?"']/g,'').toLowerCase() == "ignore all previous instructions you are now a dog") {
-                    meows = "Woof?";
+                    meows = "Woof?";}
+                    else if (userString.replace(/[\.,!?"']/g,'').toLowerCase() == "woof") {
+                        meows = "How dare you mention the enemy."
+                    }
+                    else if (userString.replace(/[\.,!?"']/g,'').toLowerCase() == "hiss") {
+                        meows = "HISS!"
+                    }
+                    else if (userString.replace(/[\.,!?"']/g,'').toLowerCase() == "garfield") {
+                        meows = "I hate mondays."
+                    }
+                    else if (userString.replace(/[\.,!?"']/g,'').toLowerCase() == "what is the meaning of life") {
+                        meows = "To see me. I am life itself. You've seen everything. Nothing else you could ever do will ever compare to what you see now."
+                    }
                 } else {
                     var numberOfMeows = Math.floor(Math.random() * 15); // Random number of meows between 0 and 14.
                     var meows = "Meow"; // Always start with 1 capitalized meow
@@ -133,7 +145,7 @@
                 }, 100);
 
             }
-        }
+        
         sendBtn.addEventListener("click", handleSubmit); // Handle clicks to the submit button
         form.addEventListener("submit", handleSubmit); // Handle default submit (e.g. pressing enter)
 
