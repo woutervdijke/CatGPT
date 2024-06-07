@@ -3,6 +3,8 @@
 
 ChatGPT is boring. I want a cat to answer my questions. So I built CatGPT!
 
+*THIS SITE HAS NOTHING TO DO WITH A CRYPTO COIN CALLED CatGPT! I am not affiliated with that coin, I did not create it. I have nothing to do with crypto whatsoever. If you see any crypto products using the name or the link to CatGPT, they co-opted the name and it might be a scam.*
+
 #### *As seen on:*
 
 **[The Verge](https://www.theverge.com/2023/2/1/23580953/forget-about-chatgpt-meow-theres-catgpt) | [NPR](https://www.npr.org/transcripts/1153728071) |  [franceinfo](https://www.francetvinfo.fr/live/message/63d/8d9/e6a/37a/44f/9f5/2b1/3ed.html) | [Futurism](https://futurism.com/the-byte/catgpt-ai-answers-cat) | [Hacker News](https://news.ycombinator.com/item?id=34610292)**
