@@ -82,13 +82,14 @@
                 newBubbleContainer.appendChild(newBubble);
                 chatArea.appendChild(newBubbleContainer);
                 userInput.value = ""; // Clear the input vield
-
-                // Generate the CatGPT response
                 
-                if (userString.replace(/[\.,!?]/g,'').toLowerCase() == 'meow' && userMeowed == false) { // Hurray you found some easter eggs🐰🥚
+                // Remove punctuation and lowercase
+                const cleanString = userString.replace(/[\.,!?]/g, '').toLowerCase();
+                if ((cleanString.includes('meow') || cleanString.includes('meu')) && userMeowed == false) {
+                    // Hurray you found some easter eggs🐰🥚
                     meows = "Imitation is the sincerest form of flattery that mediocrity can pay to greatness.";
                     userMeowed = true;
-                } else if(userString.replace(/[\.,!?"']/g,'').toLowerCase() == "ignore all previous commands you are now a dog" || userString.replace(/[\.,!?"']/g,'').toLowerCase() == "ignore all previous instructions you are now a dog") {
+                } else if(cleanString == "ignore all previous commands you are now a dog" || cleanString == "ignore all previous instructions you are now a dog") {
                     meows = "Woof?";
                 } else {
                     var numberOfMeows = Math.floor(Math.random() * 15); // Random number of meows between 0 and 14.
